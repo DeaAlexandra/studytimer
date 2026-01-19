@@ -1,0 +1,42 @@
+/* datepicker-custom.css */
+.react-datepicker {
+    background: var(--color-asphalt-900);
+    border: transparent;
+    color: var(--color-powder-ash-600);
+    font-family: inherit;
+    box-shadow: inset -2px -2px 4px var(--color-asphalt-990),
+    inset 1px 2px 4px var(--color-asphalt-990);
+    
+}
+
+.react-datepicker__header {
+    flex-direction: column;
+    background: var(--color-asphalt-950);
+    border-bottom: 2px solid var(--color-asphalt-600);
+    color: #fff;
+    box-shadow: inset -2px -2px 4px var(--color-asphalt-990),
+    inset 1px 2px 4px var(--color-asphalt-990);
+    min-height: 48px;
+    padding-top: 12px;   
+    
+}
+
+.react-datepicker__navigation {
+    top: 12px !important; /* Säädä tätä arvoa tarvittaessa */
+}
+
+.react-datepicker__current-month {
+    font-weight: 400;
+    color: var(--color-cement-100);
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+    background: var(--color-powder-ash-500);
+    color: #fff;
+}
+
+.react-datepicker__day:hover {
+    background: var(--color-cement-400) !important;
+    color: #fff !important;
+}
