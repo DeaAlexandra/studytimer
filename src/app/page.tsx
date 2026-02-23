@@ -2,6 +2,8 @@
 import { useState } from "react";
 import AddCourseTimeForm from "../components/AddCourseTimeForm";
 import AddCourseForm from "../components/AddCourseForm";
+import OverviewView from "../components/OverviewView";
+import CourseList from "../components/CourseList";
 import { TimerProvider } from "@/context/TimerContext";
 
 export default function App() {
@@ -43,13 +45,21 @@ export default function App() {
 
         {/* Välilehtien sisältö */}
         <div className="p-4 bg-radial from-asphalt-950 to-asphalt-975 text-cement-100 rounded-b shadow min-h-[600px]">
-          {active === "overview" && <p>Tässä yleiskatsausnäkymä 📊</p>}
+          {active === "overview" && <OverviewView />}
           {active === "stats" && <AddCourseTimeForm />}
           {active === "courses" && (
             <div>
-              <p className="mb-4">Tässä näet käynnissä olevat kurssit ja voit lisätä uusia kurssia.</p>
-              {/* Kurssilista tähän myöhemmin */}
-              <AddCourseForm />
+              <p className="mb-4">
+                Tässä näet käynnissä olevat kurssit ja voit lisätä uusia kursseja.
+              </p>
+              <div className="flex flex-col md:flex-row gap-8 items-start justify-center">
+                <div className="w-full md:w-[360px] lg:w-[420px]">
+                  <CourseList />
+                </div>
+                <div className="w-full md:w-[360px] lg:w-[420px]">
+                  <AddCourseForm />
+                </div>
+              </div>
             </div>
           )}
           {active === "settings" && <p>Tässä asetukset ⚙️</p>}
